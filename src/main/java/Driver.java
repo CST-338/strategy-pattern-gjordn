@@ -1,3 +1,10 @@
+/**
+ * @author Gerek G. Jordan
+ * CST 338 Software Design Summer 24
+ * Due Date: July 23rd, 2024
+ * https://github.com/CST-338/strategy-pattern-gjordn.git
+ * Class for starting point and testing and instantiating objects.
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,8 +21,10 @@ public class Driver {
             System.out.println(m);
         }
 
+        //commented out so that I can test run this class w/out errors.
+    /*
         System.out.println(monsters.get(0).attackTarget(monsters.get(1)));
         System.out.println(monsters.get(1).attackTarget(monsters.get(0)));
-
+    */
     }
 }
