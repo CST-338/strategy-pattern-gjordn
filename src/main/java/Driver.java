@@ -21,17 +21,9 @@ public class Driver {
             System.out.println(m);
         }
 
-        //test looks for null, null returned
-        MeleeAttack meleeAttack = new MeleeAttack(monsters.get(0));
-        RangedAttack rangedAttack = new RangedAttack(monsters.get(1));
-
-        System.out.println(meleeAttack.attack(monsters.get(1)));
-        System.out.println(rangedAttack.attack(monsters.get(0)));
-
-        //commented out so that I can test run this class w/out errors.
-    /*
-        System.out.println(monsters.get(0).attackTarget(monsters.get(1)));
-        System.out.println(monsters.get(1).attackTarget(monsters.get(0)));
-    */
+        while ((monsters.get(0).getHp() > 0 && (monsters.get(1).getHp() > 0))) {
+            System.out.println(monsters.get(0).attackTarget(monsters.get(1)));
+            System.out.println(monsters.get(1).attackTarget(monsters.get(0)));
+        }
     }
 }

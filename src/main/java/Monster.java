@@ -9,6 +9,7 @@
 
 import java.util.HashMap;
 import java.util.Objects;
+import java.util.Random;
 
 public class Monster {
     private String name;
@@ -16,6 +17,10 @@ public class Monster {
     private int maxHP;
     private int xp = 10;
     private HashMap<String, Integer> items;
+    private int str;
+    private int def;
+    private int agi;
+    private Attack attack;
 
     //constructor
     public Monster(Integer maxHP, Integer xp, HashMap<String, Integer> items) {
@@ -66,6 +71,51 @@ public class Monster {
     public void setItems(HashMap<String, Integer> items) {
         this.items = items;
     }
+
+    public int getStr() {
+        return str;
+    }
+
+    public void setStr(int str) {
+        this.str = str;
+    }
+
+    public int getDef() {
+        return def;
+    }
+
+    public void setDef(int def) {
+        this.def = def;
+    }
+
+    public int getAgi() {
+        return agi;
+    }
+
+    public void setAgi(int agi) {
+        this.agi = agi;
+    }
+
+    public Attack getAttack() {
+        return attack;
+    }
+
+    public void setAttack(Attack attack) {
+        this.attack = attack;
+    }
+
+    public Integer getAttribute(Integer min, Integer max) {
+        Random rand = new Random();
+        if (min > max) {
+            Integer temp = min;
+            min = max;
+            max = temp;
+        }
+
+        // Returns a random number between min and max inclusive
+        return rand.nextInt((max - min) + 1) + min;
+    }
+
     /**
      * Overridden equals method to compare monsters.
      */
