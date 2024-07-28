@@ -116,6 +116,19 @@ public class Monster {
         return rand.nextInt((max - min) + 1) + min;
     }
 
+    public String attackTarget(Monster target) {
+        int damage = this.attack.attack(target);
+        return target.takeDamage(damage);
+    }
+
+    public String takeDamage(int damage) {
+        this.hp -= damage;
+        if (this.hp <= 0) {
+            return "Oh no! the creature has perished";
+        }
+        return "The creature was hit for " + damage + " damage";
+    }
+
     /**
      * Overridden equals method to compare monsters.
      */

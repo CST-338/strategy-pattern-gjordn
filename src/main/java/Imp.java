@@ -10,11 +10,14 @@ import java.util.HashMap;
 
 public class Imp extends Monster {
     public Imp(Integer maxHP, Integer xp, HashMap<String, Integer> items) {
-
         super(maxHP, xp, items);
-
-
-
+        Integer maxStr = 15;
+        Integer maxDef = 6;
+        Integer maxAgi = 3;
+        setAttack(new MeleeAttack(this));
+        setStr(super.getAttribute(1, maxStr));
+        setDef(super.getAttribute(1, maxDef));
+        setAgi(super.getAttribute(1, maxAgi));
     }
     /**
      * Overridden toString method for Imp display.
