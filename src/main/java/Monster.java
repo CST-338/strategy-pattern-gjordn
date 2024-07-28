@@ -115,19 +115,30 @@ public class Monster {
         // Returns a random number between min and max inclusive
         return rand.nextInt((max - min) + 1) + min;
     }
-
-    public String attackTarget(Monster target) {
+    /**
+     *Method that calculates if target has taken damage.
+     */
+    public boolean takeDamage(int damage) {
+        if (damage > 0) {
+            this.hp -= damage;
+            System.out.println("The creature was hit for " + damage + " damage");
+            if (this.hp <= 0) {
+                this.hp = 0;
+                System.out.println("Oh no! the creature has perished");
+            }
+            System.out.println(this);
+            return this.hp > 0;
+        }
+        return true;
+    }
+    /**
+     * Method calls takeDamage method of the monster that's passed in.
+     */
+    public boolean attackTarget(Monster target) {
         int damage = this.attack.attack(target);
         return target.takeDamage(damage);
     }
 
-    public String takeDamage(int damage) {
-        this.hp -= damage;
-        if (this.hp <= 0) {
-            return "Oh no! the creature has perished";
-        }
-        return "The creature was hit for " + damage + " damage";
-    }
 
     /**
      * Overridden equals method to compare monsters.
