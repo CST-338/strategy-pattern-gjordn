@@ -1,4 +1,4 @@
-/**
+package Monsters; /**
  * @author Gerek G. Jordan
  * CST 338 Software Design Summer 24
  * Due Date: July 23rd, 2024
@@ -7,6 +7,7 @@
  * It provides attributes that all monsters will share.
  */
 
+import Abilities.Attack;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Random;
